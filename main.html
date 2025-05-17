@@ -4,74 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dog Adoption Application</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Dog Adoption Application</h1>
+        <form id="adoptionForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name" required>
+            </div>
 
-<h1>Dog Adoption Application</h1>
-<form>
-    <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Name" required>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+            </div>
 
-    <label for="phone">Phone Number</label>
-    <input type="text" id="phone" placeholder="Phone Number" required>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" placeholder="Address" required>
+            </div>
 
-    <label for="address">Address</label>
-    <input type="text" id="address" placeholder="Address" required>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="checkbox" value="Have you ever lived with a Dog before?">
+                <label for="checkbox">Have you ever lived with a Dog before?</label>
+            </div>
 
-    <label>
-        Have you ever lived with a Dog before?
-        <input type="checkbox" id="checkbox" value="Have you ever lived with a Dog before?">
-    </label>
+            <div class="form-group">
+                <label for="multiSelect">Please select your preferred breeds:</label>
+                <select id="multiSelect" multiple required>
+                    <option value="golden-retriever">Golden Retriever</option>
+                    <option value="labrador">Labrador</option>
+                    <option value="german-shepherd">German Shepherd</option>
+                    <option value="poodle">Poodle</option>
+                    <option value="husky">Husky</option>
+                </select>
+            </div>
 
-    <label for="breeds">Please select your preferred breeds</label>
-    <select id="breeds" multiple required>
-        <option value="Labrador">Labrador</option>
-        <option value="Beagle">Beagle</option>
-        <option value="Bulldog">Bulldog</option>
-        <option value="Poodle">Poodle</option>
-        <option value="German Shepherd">German Shepherd</option>
-    </select>
-
-    <button type="submit">Submit</button>
-</form>
-
-<script>
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevents the default form submission
-        alert("Form submitted!"); // Just an example action
-    });
-</script>
-
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
